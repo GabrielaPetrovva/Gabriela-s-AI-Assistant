@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriela's AI Assistant</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <!-- Hamburger Menu Button -->
+    <button class="hamburger-menu" id="hamburgerMenu" aria-label="Toggle chat history" aria-expanded="false">
+        <div class="hamburger-icon">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </div>
+    </button>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Chat History Sidebar -->
+    <div class="chat-history-sidebar" id="chatHistorySidebar" role="navigation" aria-label="Chat history">
+        <div class="sidebar-header">
+            <h2>💬 Chat History</h2>
+        </div>
+        <div class="sidebar-content">
+            <div class="session-controls" id="sidebarSessionControls">
+                <div class="session-selector">
+                    <div class="session-dropdown" id="sidebarSessionDropdown">
+                        <div class="session-current" id="sidebarSessionCurrent">
+                            <span class="session-name" id="sidebarCurrentSessionName">Main Chat</span>
+                            <span class="session-arrow">▼</span>
+                        </div>
+                        <div class="session-list" id="sidebarSessionList">
+                            <!-- Sessions will be populated here -->
+                        </div>
+                    </div>
+                    <div class="session-count" id="sidebarSessionCount">1 session</div>
+                </div>
+                <div class="session-buttons">
+                    <button class="new-chat-button" id="sidebarNewChatButton">
+                        <span>➕</span>
+                        <span>New Chat</span>
+                    </button>
+                    <button class="temp-chat-button" id="sidebarTempChatButton">
+                        <span>⚡</span>
+                        <span>Temp Chat</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Chat Action Buttons (repositioned directly under session buttons) -->
+                <div class="mobile-chat-actions" id="mobileChatActions" style="display: none;">
+                    <div class="mobile-chat-actions-buttons">
+                        <button class="mobile-action-btn mobile-rename-btn" id="mobileRenameBtn" aria-label="Rename current chat">
+                            <span class="mobile-btn-icon">✏️</span>
+                            <span class="mobile-btn-text">Rename</span>
+                        </button>
+                        <button class="mobile-action-btn mobile-delete-btn" id="mobileDeleteBtn" aria-label="Delete current chat">
+                            <span class="mobile-btn-icon">🗑️</span>
+                            <span class="mobile-btn-text">Remove</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+            <h1>🤖 Gabriela's AI Assistant</h1>
+            <p><span class="status-indicator"></span>AI-Powered & Ready!</p>
+        </div>
+
+        <div class="session-controls">
+            <div class="session-selector">
+                <div class="session-dropdown" id="sessionDropdown">
+                    <div class="session-current" id="sessionCurrent">
+                        <span class="session-name" id="currentSessionName">Main Chat</span>
+                        <span class="session-arrow">▼</span>
+                    </div>
+                    <div class="session-list" id="sessionList">
+                        <!-- Sessions will be populated here -->
+                    </div>
+                </div>
+                <div class="session-count" id="sessionCount">1 session</div>
+            </div>
+            <div class="session-buttons">
+                <button class="new-chat-button" id="newChatButton">
+                    <span>➕</span>
+                    <span>New Chat</span>
+                </button>
+                <button class="temp-chat-button" id="tempChatButton">
+                    <span>⚡</span>
+                    <span>Temp Chat</span>
+                </button>
+            </div>
+        </div>
+        
+        <div class="chat-messages" id="messages">
+            <div class="welcome-message">
+                <p>Hello Gabriela! 👋 I'm your AI-powered assistant. I can help with questions, creative tasks, analysis, and much more!</p>
+                <div class="suggestions">
+                    <div class="suggestion" onclick="sendSuggestion('Explain quantum physics simply')">Explain quantum physics</div>
+                    <div class="suggestion" onclick="sendSuggestion('Write a creative story')">Write a story</div>
+                    <div class="suggestion" onclick="sendSuggestion('Help me solve a problem')">Problem solving</div>
+                    <div class="suggestion" onclick="sendSuggestion('Analyze this text')">Text analysis</div>
+                </div>
+            </div>
+            
+
+            
+            <div class="typing-indicator" id="typingIndicator">
+                <div class="message-avatar">🤖</div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span>AI is thinking</span>
+                    <div class="typing-dots">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+        <div class="chat-input">
+            <div class="input-container">
+                <input type="text" class="input-field" id="messageInput" placeholder="Ask me anything, Gabriela..." autocomplete="off">
+                <button class="send-button" id="sendButton">
+                    <span>Send</span>
+                    <span>🧠</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
