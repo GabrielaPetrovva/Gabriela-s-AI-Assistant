@@ -36,9 +36,9 @@
 
 ```
 /
-├── index.html      # Markup и структура на приложението
-├── style.css       # Всички стилове, включително responsive breakpoints
-└── script.js       # Логика на приложението — клас GabrielaAI
+├── index.html     
+├── style.css       
+└── script.js       
 ```
 
 ---
