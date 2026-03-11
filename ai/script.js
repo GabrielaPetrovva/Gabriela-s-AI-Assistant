@@ -39,7 +39,7 @@
         this.isSidebarOpen = false;
 
         // Твоят OpenRouter API ключ (замени с валиден)
-        this.apiKey = "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";
+        this.apiKey = ".................................................";
 
         this.conversationHistory = [];
 
@@ -1284,4 +1284,5 @@ function sendSuggestion(suggestion) {
     const messageInput = document.getElementById('messageInput');
     messageInput.value = suggestion;
     gabrielaAI.sendMessage();
+
 }
